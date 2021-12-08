@@ -23,71 +23,6 @@ export const Header = styled.header<PropsBackground>`
     display: flex;
     flex-direction: column;
 
-    .menu-area {
-      width: 100%;
-      height: 50px;
-
-      .button-menu {
-        display: none;
-      }
-
-      .menu {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-
-        li {
-          margin: 0 5px;
-
-          a {
-            color: #FFF;
-            text-decoration: none;
-            opacity: .6;
-            display: flex;
-            flex-direction: column;
-            font-size: 14px;
-            transition: all ease .6s;
-            margin-bottom: -3px;
-
-            span {
-              margin-bottom: 5px;
-            }
-
-            .bar {
-              height: 3px;
-              width: 0;
-              transition: all ease .6s;
-            }
-          }
-
-          a:hover {
-            opacity: 1;
-
-            .bar {
-              width: 100%;
-              height: 3px;
-              background-color: #82C300;
-            }
-          }
-
-          a.active {
-            opacity: 1;
-            
-            .bar {
-              width: 100%;
-              height: 3px;
-              background-color: #82C300;
-            }
-          }
-        }
-      }
-    }
-
     .banner {
       width: 100%;
       height: 420px;
@@ -120,47 +55,6 @@ export const Header = styled.header<PropsBackground>`
 
   @media (max-width: 425px) {
     .background-shadow {
-      .menu-area {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        position: relative;
-
-        .button-menu {
-          height: auto;
-          display: flex;
-          font-size: 32px;
-          margin-right: 30px;
-          color: #FFF;
-          margin-top: 12px;
-        }
-
-        .menu {
-          height: 0;
-          overflow: hidden;
-          width: auto;
-          position: absolute;
-          right: 20px;
-          bottom: -180px;
-          flex-direction: column;
-          transition: all ease .6s;
-
-          &.active {
-            height: 175px; 
-          }
-
-          li {
-            margin: 5px 0;
-            
-            a {
-              span {
-                text-align: right;
-              }
-            }
-          }
-        }
-      }
-
       .banner {
         padding: 20px;
         box-sizing: border-box;

@@ -15,6 +15,7 @@ import ServiceItem from '../../Components/ServiceItem';
 import FlatItem from '../../Components/FlatItem';
 import ContactItem from '../../Components/ContactItem';
 import Carousel from '../../Components/Carousel';
+import Menu from '../../Components/Menu';
 
 // FORM
 import ContactForm from '../../Forms/Contact';
@@ -68,20 +69,6 @@ function Home() {
     }
   }
 
-  // Menu scroll
-  function scrollToIdOnClick(id: string, e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-    e.preventDefault();
-    const section: HTMLElement | null = document.querySelector(id);
-    if(section) {
-      const to: number = section.offsetTop;
-
-      window.scroll({
-        top: to - 80,
-        behavior: 'smooth'
-      });
-    }
-  }
-
   // Fazer o scroll ir para o topo
   function goToScrollTop() {
     window.scroll({
@@ -95,28 +82,7 @@ function Home() {
     <C.Container>
       <C.Header id="home" background={service.bannerPrimary.background}>
         <div className="background-shadow">
-          <nav className="menu-area">
-            <div className="button-menu" onClick={()=>setMenuMobile(!menuMobile)}><Ic.FaBars /></div>
-            <ul 
-              className={
-                menuMobile ?
-                "menu active"
-                :
-                "menu"
-              }
-            >
-              { 
-                service.menu.map((item, index) =>(
-                  <li key={index} onClick={()=>setMenuMobile(false)}>
-                    <a href={`${item.id}`} onClick={(e)=>scrollToIdOnClick(item.id, e)}>
-                      <span>{item.title}</span>
-                      <div className="bar"/>
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </nav>
+          <Menu data={service.menu} />
 
           <div className="banner">
             <h1 className="title">{service.bannerPrimary.logo}</h1>
