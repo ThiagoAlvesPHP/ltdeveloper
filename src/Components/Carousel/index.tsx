@@ -1,5 +1,5 @@
 // LIB
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 // STYLE
@@ -33,7 +33,7 @@ function Carousel({ data }: PropsCarousel) {
               return (
                 <ImageProject 
                   data={item} 
-                  key={index} 
+                  key={index.toString()} 
                   className={index === current ? "active" : ""} 
                   current={current}
                   index={index}

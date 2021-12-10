@@ -35,7 +35,6 @@ function Home() {
 
   // STATE
   const [ top, setTop ] = useState<number>(0);
-  const [ menuMobile, setMenuMobile ] = useState<boolean>(false);
 
   useEffect(()=>{
     window.onscroll = (e) => scroll(e);    
@@ -110,7 +109,7 @@ function Home() {
         <C.Services id="services">
           {
             service.services.map((item, index)=>(
-              <ServiceItem data={item} key={index} top={top} />
+              <ServiceItem data={item} key={index.toString()} top={top} />
             ))
           }
         </C.Services>
@@ -121,7 +120,7 @@ function Home() {
             <div className="plans-content desktop">
               {
                 service.plans.data.map((item, index)=>(
-                  <FlatItem data={item} key={index}/>
+                  <FlatItem data={item} key={index.toString()}/>
                 ))
               }
             </div>
@@ -132,8 +131,8 @@ function Home() {
               >
                 {
                   service.plans.data.map((item, index)=>(
-                    <SwiperSlide>
-                      <FlatItem data={item} key={index}/>
+                    <SwiperSlide key={index.toString()}>
+                      <FlatItem data={item}/>
                     </SwiperSlide>
                   ))
                 }
@@ -162,11 +161,11 @@ function Home() {
             <div className="info-company">
               {
                 service.companyInformation.map((item, index) => (
-                  <ContactItem data={item} key={index} />
+                  <ContactItem data={item} key={index.toString()} />
                 ))
               }
               <div className="map-company">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.430944551873!2d-39.49374808516957!3d-13.752865990346772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x73f1712267349bb%3A0x1125b6fd20a75f36!2sAlbicod!5e0!3m2!1spt-BR!2sbr!4v1637936111312!5m2!1spt-BR!2sbr" width="100%" height="100%" style={{border: 0}} loading="lazy"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.430944551873!2d-39.49374808516957!3d-13.752865990346772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x73f1712267349bb%3A0x1125b6fd20a75f36!2sAlbicod!5e0!3m2!1spt-BR!2sbr!4v1637936111312!5m2!1spt-BR!2sbr" title="Localização da LTDeveloper" width="100%" height="100%" style={{border: 0}} loading="lazy"></iframe>
               </div>
             </div>
             <div className="contact-area">

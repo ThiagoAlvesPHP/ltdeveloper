@@ -24,7 +24,7 @@ function Menu({data}: PropsMenu) {
           {
             data.map((item, index)=>{
               return (
-                <MenuItem data={item} key={index} setShowMenu={setShowMenu} />
+                <MenuItem data={item} key={index.toString()} setShowMenu={setShowMenu} />
               )
             })
           }
