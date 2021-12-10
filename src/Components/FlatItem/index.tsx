@@ -17,7 +17,7 @@ function FlatItem({ data }: PropsFlat) {
         <div className="list-benefits">
           {
             data.benefits.map((item, index) => (
-              <span className="item-benefit" key={index}><Ic.FaCheck /> {item}</span>
+              <span className="item-benefit" key={index.toString()}><Ic.FaCheck /> {item}</span>
             ))
           }
         </div>

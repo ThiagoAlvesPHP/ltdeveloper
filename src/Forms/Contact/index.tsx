@@ -32,7 +32,7 @@ function ContactForm() {
 
   // Verifica campo de nome!
   function blurName() {
-    if(name != "") {
+    if(name !== "") {
       getError({status: true, type: "name", message: ""});
     } else {
       getError({status: false, type: "name", message: "Preencha o campo de nome!"});
@@ -41,7 +41,7 @@ function ContactForm() {
   
   // Verifica campo de e-mail
   function blurEmail() {
-    if(email != "") {
+    if(email !== "") {
       if(email.indexOf('@') > -1) {
         if(email.split('@')[1] === "gmail.com" || email.split('@')[1] === "hotmail.com") {
           getError({status: true, type: "email", message: ""});
@@ -58,7 +58,7 @@ function ContactForm() {
 
   // Verifica campo de Mensagem
   function blurMsg() {
-    if(msg != "") {
+    if(msg !== "") {
       getError({status: true, type: "msg", message: ""});
     } else {
       getError({status: false, type: "msg", message: "Preencha o campo de mensagem!"});

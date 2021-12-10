@@ -5,6 +5,7 @@ import * as C from './style';
 import { PropsContact } from '../../types/contact';
 
 function ContactItem({ data }: PropsContact) {
+
   return (
     <C.Container>
       <div className="icon-area">
@@ -17,7 +18,7 @@ function ContactItem({ data }: PropsContact) {
         { data.link === false ?
           <span className="body">{data.body}</span>
           :
-          <a href="" className="link" target="_blank">{data.body}</a>
+          <a href="https://web.whatsapp.com/send?phone=5573999412514" className="link" target="_blank" rel="noreferrer">{data.body}</a>
         }
       </div>
     </C.Container>
