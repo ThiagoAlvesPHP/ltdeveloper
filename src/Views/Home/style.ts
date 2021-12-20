@@ -31,10 +31,8 @@ export const Header = styled.header<PropsBackground>`
       justify-content: center;
       align-items: center;
 
-      .title {
-        font-size: 34px;
-        color: #FFF;
-        margin: 0;
+      .logo {
+        width: 200px;
         margin-bottom: 40px;
       }
 
