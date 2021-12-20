@@ -8,7 +8,8 @@ export interface PropsCarousel {
 export interface PropsImageProject {
   data: {
     title: string,
-    background: string
+    background: string,
+    link?: string
   },
   className?: string,
   current: number,

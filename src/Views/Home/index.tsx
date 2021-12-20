@@ -44,6 +44,8 @@ function Home() {
   function scroll(e: Event) {
     setTop(document.documentElement.scrollTop);
 
+    console.log(contactRef.current?.offsetTop);
+
     if(document.documentElement.scrollTop >= 425) {
       buttonScrollTopRef.current?.classList.remove('hidden');
       aboutRef.current?.classList.remove('hidden');
@@ -55,15 +57,15 @@ function Home() {
       buttonScrollTopRef.current?.classList.add('hidden');
     }
 
-    if(document.documentElement.scrollTop >= 2705 - 140) {
-      plansRef.current?.classList.remove('hidden'); 
-    }
+    // if(document.documentElement.scrollTop >= 2705 - 140) {
+    //   plansRef.current?.classList.remove('hidden'); 
+    // }
 
-    if(document.documentElement.scrollTop >= 3805 - 80) {
+    if(document.documentElement.scrollTop >= 3255 - 80) {
       projectsRef.current?.classList.remove('hidden');
     }
 
-    if(document.documentElement.scrollTop >= 4355 - 80) {
+    if(document.documentElement.scrollTop >= 3705 - 80) {
       contactRef.current?.classList.remove('hidden');
     }
   }
@@ -84,7 +86,7 @@ function Home() {
           <Menu data={service.menu} />
 
           <div className="banner">
-            <h1 className="title">{service.bannerPrimary.logo}</h1>
+            <img src={service.bannerPrimary.logo} alt="logo-do-website" className="logo" />
             <p className="quote">“{service.bannerPrimary.quote}”</p>
             <span className="author">{service.bannerPrimary.author}</span>
           </div>
@@ -114,7 +116,7 @@ function Home() {
           }
         </C.Services>
 
-        <C.Plans id="plans">
+        {/* <C.Plans id="plans">
           <div className="container hidden" ref={plansRef}>
             <h3 className="title">{service.plans.title}</h3>
             <div className="plans-content desktop">
@@ -139,7 +141,7 @@ function Home() {
               </Swiper>
             </div>
           </div>
-        </C.Plans>
+        </C.Plans> */}
 
         <C.BannerSecondary background={service.bannerSecondary.background}>
           <div className="background-shadow">

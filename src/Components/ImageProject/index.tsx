@@ -5,8 +5,15 @@ import * as C from './style';
 import { PropsImageProject } from '../../types/carousel';
 
 function ImageProject({ data, className, current, index }: PropsImageProject) {
+
+  function redirectWebsite(link: string | undefined) {
+    if(link) {
+      window.open(link, "_blank");
+    }
+  }
+
   return (
-    <C.Container className={className} background={data.background}>
+    <C.Container onClick={()=>redirectWebsite(data.link)} className={className} background={data.background}>
       { index === current &&
         <div className="image">
           <div className="bottom">

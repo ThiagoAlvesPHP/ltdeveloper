@@ -2,6 +2,7 @@
 import * as Ic from 'react-icons/fa';
 
 // ASSETs
+import logo from '../Assets/logo.webp';
 import banner from '../Assets/banner.webp';
 import service1 from '../Assets/service1.webp';
 import service2 from '../Assets/service2.webp';
@@ -10,6 +11,7 @@ import banner2 from '../Assets/banner2.webp';
 import sl1 from '../Assets/sl1.webp';
 import sl2 from '../Assets/sl2.webp';
 import sl3 from '../Assets/sl3.webp';
+import sl4 from '../Assets/sl4.webp';
 
 const data = {
   menu: [
@@ -39,7 +41,7 @@ const data = {
     }
   ],
   bannerPrimary: {
-    logo: "LTDeveloper",
+    logo: logo,
     quote: "A única maneira de fazer um grande trabalho é amando o que se faz.",
     author: "Steve Jobs",
     background: banner
@@ -106,16 +108,24 @@ const data = {
   },
   projects: [
     {
-      title: "Mercaflor",
-      background: sl1
-    },
-    {
       title: "Callnet - BA",
-      background: sl2
+      background: sl1,
+      link: "https://www.callnetba.net.br/"
     },
     {
-      title: "Ponto Net",
-      background: sl3
+      title: "Adson Show de Prêmios",
+      background: sl2,
+      link: "https://www.adsonrifas.com/"
+    },
+    {
+      title: "Conexão Ativa",
+      background: sl3,
+      link: "https://www.conexaoativatelecom.com/"
+    },
+    {
+      title: "Emanuel Premiações",
+      background: sl4,
+      link: "https://www.emanuelpremiacoes.com.br/"
     }
   ],
   companyInformation: [
