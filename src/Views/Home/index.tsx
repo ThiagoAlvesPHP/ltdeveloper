@@ -1,6 +1,6 @@
 // LIBs
 import { useEffect, useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 import * as Ic from 'react-icons/fa';
 
 // STYLEs
@@ -12,7 +12,7 @@ import service from '../../Services/service';
 
 // COMPONENTs
 import ServiceItem from '../../Components/ServiceItem';
-import FlatItem from '../../Components/FlatItem';
+// import FlatItem from '../../Components/FlatItem';
 import ContactItem from '../../Components/ContactItem';
 import Carousel from '../../Components/Carousel';
 import Menu from '../../Components/Menu';
@@ -29,7 +29,7 @@ function Home() {
   const abstract1Ref = useRef<HTMLDivElement>(null);
   const abstract2Ref = useRef<HTMLDivElement>(null);
   const abstract3Ref = useRef<HTMLDivElement>(null);
-  const plansRef = useRef<HTMLDivElement>(null);
+  // const plansRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
@@ -43,8 +43,6 @@ function Home() {
   // Animações de scroll
   function scroll(e: Event) {
     setTop(document.documentElement.scrollTop);
-
-    console.log(contactRef.current?.offsetTop);
 
     if(document.documentElement.scrollTop >= 425) {
       buttonScrollTopRef.current?.classList.remove('hidden');
