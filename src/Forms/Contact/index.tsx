@@ -1,10 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 // STYLE
 import * as C from './style';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Validate
 import { PropsValidate } from '../../types/validate';
+
+// Services
+import api from '../../Services/api';
 
 function ContactForm() {
 
@@ -104,14 +109,48 @@ function ContactForm() {
     }
   }
 
-  function sendEmail() {
+  async function sendEmail() {
     if(validateName && validateEmail && validateMsg) {
-      alert("ok");
+      let req = await api.sendEmail(name, email, msg);
+
+      if(req.status === 'ok') {
+        toast.success(req.return, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark'
+        });
+      } else {
+        toast.error(req.return, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark'
+        });
+      }
+
+      setName("");
+      setEmail("");
+      setMsg("");
+
+      setValidateName(false);
+      setValidateEmail(false);
+      setValidateMsg(false);
     }
   }
 
   return (
     <C.Container>
+      <ToastContainer />
+
       <input 
         type="text" 
         value={name} 
@@ -135,7 +174,7 @@ function ContactForm() {
         onBlur={blurMsg}
         ref={msgRef}
       ></textarea>
-      <button onClick={sendEmail} ref={buttonRef}>Enviar</button>
+      <button className="send-email" onClick={sendEmail} ref={buttonRef}>Enviar</button>
     </C.Container>
   )
 }

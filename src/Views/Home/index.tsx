@@ -44,8 +44,6 @@ function Home() {
   function scroll(e: Event) {
     setTop(document.documentElement.scrollTop);
 
-    console.log(contactRef.current?.offsetTop);
-
     if(document.documentElement.scrollTop >= 425) {
       buttonScrollTopRef.current?.classList.remove('hidden');
       aboutRef.current?.classList.remove('hidden');
