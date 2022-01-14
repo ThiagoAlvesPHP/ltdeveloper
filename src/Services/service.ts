@@ -28,10 +28,6 @@ const data = {
       id: "#services"
     },
     {
-      title: "Planos",
-      id: "#plans"
-    },
-    {
       title: "Projetos",
       id: "#projects"
     },

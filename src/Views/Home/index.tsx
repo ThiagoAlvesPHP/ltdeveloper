@@ -1,6 +1,6 @@
 // LIBs
 import { useEffect, useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 import * as Ic from 'react-icons/fa';
 
 // STYLEs
@@ -12,7 +12,7 @@ import service from '../../Services/service';
 
 // COMPONENTs
 import ServiceItem from '../../Components/ServiceItem';
-import FlatItem from '../../Components/FlatItem';
+// import FlatItem from '../../Components/FlatItem';
 import ContactItem from '../../Components/ContactItem';
 import Carousel from '../../Components/Carousel';
 import Menu from '../../Components/Menu';
@@ -44,7 +44,7 @@ function Home() {
   function scroll(e: Event) {
     setTop(document.documentElement.scrollTop);
 
-    if(document.documentElement.scrollTop >= 425) {
+    if(document.documentElement.scrollTop >= 400) {
       buttonScrollTopRef.current?.classList.remove('hidden');
       aboutRef.current?.classList.remove('hidden');
       abstractRef.current?.classList.remove('hidden');
@@ -81,7 +81,7 @@ function Home() {
     <C.Container>
       <C.Header id="home" background={service.bannerPrimary.background}>
         <div className="background-shadow">
-          <Menu data={service.menu} />
+          <Menu data={service.menu} scroll={top} />
 
           <div className="banner">
             <img src={service.bannerPrimary.logo} alt="logo-do-website" className="logo" />

@@ -2,7 +2,8 @@ export interface PropsMenu {
   data: {
     title: string,
     id: string
-  }[]
+  }[],
+  scroll: number
 }
 
 export interface PropsMenuItem {

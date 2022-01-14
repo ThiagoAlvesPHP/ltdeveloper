@@ -47,6 +47,12 @@ export const Conatiner = styled.div<PropShowMenu>`
       svg {
         font-size: 28px;
         color: #FFF;
+        position: fixed;
+        z-index: 30;
+
+        &.dark {
+          color: #000;
+        }
       }
     }
 
@@ -55,7 +61,7 @@ export const Conatiner = styled.div<PropShowMenu>`
       height: 100vh;
       position: fixed;
       right: 0;
-      bottom: 0;
+      top: 0;
       background-color: rgba(0, 0, 0, .6);
       z-index: 30;
       overflow: hidden;
