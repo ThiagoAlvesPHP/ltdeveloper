@@ -55,6 +55,7 @@ export const Container = styled.li`
       height: 40px;
       color: #212121;
       position: relative;
+      font-size: 16px;
 
       span {
         flex: 1;
