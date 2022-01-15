@@ -30,11 +30,14 @@ export const Container = styled.div<PropsBackground>`
       bottom: 0;
       background: linear-gradient(to bottom, transparent, #212121);
       padding: 0 20px;
+      display: flex;
+      align-items: flex-end;
       box-sizing: border-box;
 
       .title-project {
         font-size: 34px;
         color: #FFF;
+        text-shadow: 3px 2px 2px #212121;
       }
     }
   }
@@ -50,6 +53,12 @@ export const Container = styled.div<PropsBackground>`
     .image {
       width: 300px;
       height: 230px;
+
+      .bottom {
+        .title-project {
+          font-size: 24px;
+        }
+      }
     }
   }
 `;
