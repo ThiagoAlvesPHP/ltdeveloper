@@ -134,7 +134,7 @@ const data = {
     {
       Icon: Ic.FaEnvelope,
       title: "E-mail:",
-      body: "thiagoalves@hotmail.com",
+      body: "thiagoalves@albicod.com",
       link: false
     },
     {
