@@ -70,6 +70,17 @@ export const Container = styled.div`
       width: 300px;
       height: 230px;
 
+      .image {
+        .bottom {
+          display: flex;
+          justify-content: center;
+
+          .title-project {
+            font-size: 20px;
+          }
+        }
+      }
+
       .arrow-left {
         top: 40%;
       }
