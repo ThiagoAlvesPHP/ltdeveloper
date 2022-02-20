@@ -21,7 +21,7 @@ import Menu from '../../Components/Menu';
 import ContactForm from '../../Forms/Contact';
 
 function Home() {
-  
+
   // REFs
   const buttonScrollTopRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -33,18 +33,21 @@ function Home() {
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
-  // STATE
-  const [ top, setTop ] = useState<number>(0);
+  // date
+  const dt = new Date();
 
-  useEffect(()=>{
-    window.onscroll = (e) => scroll(e);    
+  // STATE
+  const [top, setTop] = useState<number>(0);
+
+  useEffect(() => {
+    window.onscroll = (e) => scroll(e);
   }, [])
 
   // Animações de scroll
   function scroll(e: Event) {
     setTop(document.documentElement.scrollTop);
 
-    if(document.documentElement.scrollTop >= 400) {
+    if (document.documentElement.scrollTop >= 400) {
       buttonScrollTopRef.current?.classList.remove('hidden');
       aboutRef.current?.classList.remove('hidden');
       abstractRef.current?.classList.remove('hidden');
@@ -59,11 +62,11 @@ function Home() {
     //   plansRef.current?.classList.remove('hidden'); 
     // }
 
-    if(document.documentElement.scrollTop >= 3255 - 80) {
+    if (document.documentElement.scrollTop >= 3255 - 80) {
       projectsRef.current?.classList.remove('hidden');
     }
 
-    if(document.documentElement.scrollTop >= 3705 - 80) {
+    if (document.documentElement.scrollTop >= 3705 - 80) {
       contactRef.current?.classList.remove('hidden');
     }
   }
@@ -75,7 +78,7 @@ function Home() {
       behavior: 'smooth'
     });
   }
-  
+
 
   return (
     <C.Container>
@@ -90,6 +93,12 @@ function Home() {
           </div>
         </div>
       </C.Header>
+
+      <div className='whatsapp'>
+        <a href="https://api.whatsapp.com/send?phone=5573999412514&text=Eu%20preciso%20de%20um%20or%C3%A7amento" className='link' target='_blank'>
+          <div className='text'>Fale Conosco</div> <Ic.FaWhatsapp />
+        </a>
+      </div>
 
       <C.Content>
         <C.About id="about">
@@ -108,7 +117,7 @@ function Home() {
 
         <C.Services id="services">
           {
-            service.services.map((item, index)=>(
+            service.services.map((item, index) => (
               <ServiceItem data={item} key={index.toString()} top={top} />
             ))
           }
@@ -165,7 +174,7 @@ function Home() {
                 ))
               }
               <div className="map-company">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.430944551873!2d-39.49374808516957!3d-13.752865990346772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x73f1712267349bb%3A0x1125b6fd20a75f36!2sAlbicod!5e0!3m2!1spt-BR!2sbr!4v1637936111312!5m2!1spt-BR!2sbr" title="Localização da LTDeveloper" width="100%" height="100%" style={{border: 0}} loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.430944551873!2d-39.49374808516957!3d-13.752865990346772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x73f1712267349bb%3A0x1125b6fd20a75f36!2sAlbicod!5e0!3m2!1spt-BR!2sbr!4v1637936111312!5m2!1spt-BR!2sbr" title="Localização da LTDeveloper" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
               </div>
             </div>
             <div className="contact-area">
@@ -176,7 +185,7 @@ function Home() {
       </C.Content>
 
       <C.Baseboard>
-        <p className="quote">Todos Direitos autorais reservados</p>
+        <p className="quote">©2021-{dt.getFullYear()} LT Developer - Todos os direitos reservados</p>
       </C.Baseboard>
 
       <C.GoToScrollTop className="hidden" onClick={goToScrollTop} ref={buttonScrollTopRef}>

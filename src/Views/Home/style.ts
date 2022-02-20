@@ -4,6 +4,37 @@ import { PropsBackground } from '../../types/background';
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
+
+  .whatsapp {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    position: fixed;
+    z-index: 16;
+    right: 30px;
+    bottom: 85px;
+    background: darkgreen;
+    color: #fff;
+    height: 20px;
+    border-radius: 5px;
+    transition: all ease 0.3s;
+
+    .link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      cursor: pointer;
+
+      .text {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .whatsapp:hover {
+    background: green;
+  }
 `;
 
 export const Header = styled.header<PropsBackground>`
@@ -487,6 +518,10 @@ export const Baseboard = styled.section`
   align-items: center;
   font-size: 18px;
   color: #FFF;
+
+  .quote {
+    font-size: 14px;
+  }
 `;
 
 export const GoToScrollTop = styled.div`
